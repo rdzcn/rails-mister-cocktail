@@ -4,19 +4,30 @@
   <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
 </div>
 
+<p>
+  <span id="banner-typed-text"></span>
+</p>
+
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card text-center">
+       <div class="card-header"> <ul>
+         <% cocktail.doses.each do |dose| %>
+         <li><%= dose.description %> - <%= dose.ingredient.name %></li>
+         <% end %>
+       </ul>
+     </div>
 
-          <div class="card-body">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+     <div class="card-body">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
   </div>
+</div>
+<% end %>
+</div>
 </div>
 
 

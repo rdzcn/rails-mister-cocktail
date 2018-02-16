@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+
+  <title>RailsMisterCocktail</title>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RailsMisterCocktail</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </body>
+<body>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_pack_tag "application" %>
+</body>
 </html>
